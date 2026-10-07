@@ -1,0 +1,4 @@
+*.txt
+*.pdf
+.agents
+.idea

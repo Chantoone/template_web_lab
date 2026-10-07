@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NITS Lab | PTIT</title>
+    <link rel="icon" type="image/png" href="assest/image/logo.png" />
+    <meta name="description" content="Introduction website for NITS Lab at Posts and Telecommunications Institute of Technology." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assest/home.css" />
+    <link rel="stylesheet" href="assest/glass.css" />
+  </head>
+  <body class="home glass-site">
+    <div class="cursor-spotlight" id="cursor-spotlight" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#about" aria-label="NITS Lab home">
+          <img class="brand-logo" src="assest/image/nits.png" alt="" width="509" height="601" />
+          <div class="brand-text">
+            <span class="abbr">NITS LAB</span>
+            <span class="full">PTIT · Research Lab</span>
+          </div>
+        </a>
+
+        <nav class="nav" id="main-nav" aria-label="Main navigation">
+          <a class="active" aria-current="location" href="#about">About</a>
+          <a href="#research">Research</a>
+          <a href="#news">News</a>
+          <a href="public-en.html">Publications</a>
+          <a href="resident-en.html">NITS Resident</a>
+        </nav>
+
+        <button data-open-label="Open menu" data-close-label="Close menu" class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <button class="lang-toggle" type="button" data-lang-switcher data-vi-href="index.html" data-en-href="index-en.html" aria-label="Switch to Vietnamese" title="Switch to Vietnamese">
+          <span aria-hidden="true">◎</span>
+          <span>EN</span>
+        </button>
+      </div>
+    </header>
+    <main id="main-content">
+      <section class="hero" id="about" aria-labelledby="hero-title">
+      <div class="container hero-layout">
+        <div class="hero-content">
+          <p class="eyebrow hero-entry"><span class="status-dot" aria-hidden="true"></span> NITS LAB <span class="eyebrow-divider" aria-hidden="true">/</span> PTIT</p>
+          <h1 class="hero-title hero-entry" id="hero-title">Nurturing <br>IT Student <br><span>Talent</span> Lab</h1>
+          <p class="hero-desc hero-entry">PTIT NITS, the Nurturing IT Student Talent Lab, was established to build a modern, focused environment for learning, research, and creativity for Information Technology students at the Posts and Telecommunications Institute of Technology.</p>
+          <div class="hero-actions hero-entry">
+            <a class="button button-primary" href="#research">Explore research <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="public-en.html">View publications <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="hero-visual-stack">
+          <div class="hero-art liquid-card hero-entry interactive-orbit" role="group" aria-label="Interactive research diagram">
+            <div class="art-corner art-corner--top"></div>
+            <div class="art-corner art-corner--bottom"></div>
+            <div class="art-label"><span class="live-beacon"></span> NITS / QUANTUM ORBITAL</div>
+            
+            <svg aria-hidden="true" class="orbital" viewBox="0 0 620 620" fill="none" focusable="false">
+              <defs>
+                <pattern id="dot-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                  <circle cx="1" cy="1" r="1.2" fill="#176b5b" opacity=".18"/>
+                </pattern>
+                <radialGradient id="orbit-glow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#86e7c4" stop-opacity="0.45"/>
+                  <stop offset="45%" stop-color="#176b5b" stop-opacity="0.15"/>
+                  <stop offset="85%" stop-color="#f3faf6" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="core-glow-grad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+                  <stop offset="70%" stop-color="#eafaf3" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#86e7c4" stop-opacity="0.4"/>
+                </radialGradient>
+                <linearGradient id="beam-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#176b5b" stop-opacity="0.2"/>
+                  <stop offset="50%" stop-color="#86e7c4" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#176b5b" stop-opacity="0.2"/>
+                </linearGradient>
+                <filter id="mint-bloom" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="6" result="blur"/>
+                  <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+                <filter id="intense-glow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="10" result="blur2"/>
+                  <feMerge>
+                    <feMergeNode in="blur2"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <!-- Background pattern & atmospheric nebula -->
+              <rect width="620" height="620" fill="url(#dot-grid)"/>
+              <circle cx="310" cy="310" r="295" fill="url(#orbit-glow)"/>
+
+              <!-- Pulsing Sonar Radiance Waves -->
+              <g class="sonar-waves">
+                <circle class="sonar-wave sonar-wave-1" cx="310" cy="310" r="80" stroke="#86e7c4" stroke-width="1.6" fill="none"/>
+                <circle class="sonar-wave sonar-wave-2" cx="310" cy="310" r="140" stroke="#86e7c4" stroke-width="1.3" fill="none"/>
+                <circle class="sonar-wave sonar-wave-3" cx="310" cy="310" r="200" stroke="#176b5b" stroke-width="1" fill="none"/>
+              </g>
+
+              <!-- Technical Astrolabe Gauges -->
+              <g stroke="#176b5b" opacity=".22">
+                <path d="M310 16V604M16 310H604"/>
+                <circle cx="310" cy="310" r="275" stroke-dasharray="2 10" stroke-width="1"/>
+                <circle cx="310" cy="310" r="225" stroke-dasharray="3 8" stroke-width="1"/>
+                <circle cx="310" cy="310" r="150" stroke-dasharray="2 6" stroke-width="1"/>
+              </g>
+
+              <!-- Outer Spinning Radar Scanner Ring (Clockwise) -->
+              <g class="radar-scanner-ring">
+                <circle cx="310" cy="310" r="262" stroke="#86e7c4" stroke-width="2.2" stroke-dasharray="45 170 65 110" opacity=".65" filter="url(#mint-bloom)"/>
+              </g>
+
+              <!-- Counter-Spinning Technical Tick Ring -->
+              <g class="counter-spin-ring">
+                <circle cx="310" cy="310" r="242" stroke="#176b5b" stroke-width="1.2" stroke-dasharray="4 16" opacity=".5"/>
+              </g>
+
+              <!-- Central Rotating Orbital System -->
+              <g class="orbit-rotator">
+                <g class="orbit-lines" stroke="#176b5b" stroke-width="1.4">
+                  <ellipse class="orbit-track track-1" cx="310" cy="310" rx="252" ry="110" transform="rotate(-35 310 310)"/>
+                  <ellipse class="orbit-track track-2" cx="310" cy="310" rx="252" ry="110" transform="rotate(35 310 310)"/>
+                  <ellipse class="orbit-track track-3" cx="310" cy="310" rx="252" ry="110" transform="rotate(90 310 310)"/>
+                  <ellipse class="orbit-track track-4" cx="310" cy="310" rx="228" ry="142" transform="rotate(-40 310 310)" stroke="#86e7c4" opacity=".35" stroke-dasharray="8 6"/>
+                  <ellipse class="orbit-track track-5" cx="310" cy="310" rx="228" ry="142" transform="rotate(40 310 310)" stroke="#86e7c4" opacity=".35" stroke-dasharray="8 6"/>
+                </g>
+
+                <!-- Synaptic energy beams connecting nodes -->
+                <g class="synaptic-beams" stroke="url(#beam-grad)" stroke-width="1.4" stroke-dasharray="4 8" opacity=".75">
+                  <line x1="310" y1="310" x2="119" y2="452" />
+                  <line x1="310" y1="310" x2="465" y2="443" />
+                  <line x1="310" y1="310" x2="310" y2="63" />
+                  <line x1="310" y1="310" x2="520" y2="220" />
+                  <line x1="310" y1="310" x2="95" y2="171" />
+                </g>
+
+                <!-- Orbiting Quantum Nodes with Intense Mint Glow & Radar Waves -->
+                <g class="orbit-nodes">
+                  <g class="node-group node-1" transform="translate(119, 452)">
+                    <circle r="14" fill="#86e7c4" opacity=".25" class="node-pulse"/>
+                    <circle r="8" fill="#86e7c4" filter="url(#intense-glow)"/>
+                    <circle r="4" fill="#ffffff"/>
+                  </g>
+                  <g class="node-group node-2" transform="translate(465, 443)">
+                    <circle r="12" fill="#86e7c4" opacity=".25" class="node-pulse"/>
+                    <circle r="7" fill="#86e7c4" filter="url(#intense-glow)"/>
+                    <circle r="3.5" fill="#ffffff"/>
+                  </g>
+                  <g class="node-group node-3" transform="translate(310, 63)">
+                    <circle r="15" fill="#86e7c4" opacity=".25" class="node-pulse"/>
+                    <circle r="8.5" fill="#86e7c4" filter="url(#intense-glow)"/>
+                    <circle r="4" fill="#ffffff"/>
+                  </g>
+                  <g class="node-group node-4" transform="translate(520, 220)">
+                    <circle r="10" fill="#176b5b" opacity=".3"/>
+                    <circle r="6" fill="#176b5b"/>
+                    <circle r="2.5" fill="#86e7c4"/>
+                  </g>
+                  <g class="node-group node-5" transform="translate(95, 171)">
+                    <circle r="10" fill="#176b5b" opacity=".3"/>
+                    <circle r="5.5" fill="#176b5b"/>
+                    <circle r="2" fill="#86e7c4"/>
+                  </g>
+                  <g class="node-group node-6" transform="translate(310, 557)">
+                    <circle r="11" fill="#86e7c4" opacity=".2"/>
+                    <circle r="5.5" fill="#86e7c4"/>
+                    <circle r="2" fill="#ffffff"/>
+                  </g>
+                </g>
+
+                <!-- Center Core Multi-layered Sphere -->
+                <g class="center-core-sphere">
+                  <circle cx="310" cy="310" r="70" stroke="#86e7c4" stroke-width="1.6" stroke-dasharray="6 8" opacity=".65" class="core-outer-ring"/>
+                  <circle cx="310" cy="310" r="58" fill="url(#core-glow-grad)" stroke="#176b5b" stroke-width="2" stroke-opacity=".5" filter="url(#mint-bloom)"/>
+                  <circle cx="310" cy="310" r="46" fill="none" stroke="#86e7c4" stroke-width="1.2" stroke-dasharray="4 4" opacity=".75"/>
+                </g>
+              </g>
+            </svg>
+
+            <!-- Center Core Holographic Typography -->
+            <div class="art-core">
+              <span class="core-title">NITS</span>
+              <span class="core-sub">LAB</span>
+              <span class="core-badge">AI RESEARCH</span>
+            </div>
+
+            <!-- Floating Interactive Scientific Badges -->
+            <a class="orbit-tag orbit-tag--one float-anim-1" data-orbit-focus="language" href="#research-language">
+              <span class="tag-sparkle">✦</span> Language <span class="tag-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="orbit-tag orbit-tag--two float-anim-2" data-orbit-focus="vision" href="#research-vision">
+              <span class="tag-sparkle">✦</span> Vision <span class="tag-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="orbit-tag orbit-tag--three float-anim-3" data-orbit-focus="reasoning" href="#research-vision">
+              <span class="tag-sparkle">✦</span> Reasoning <span class="tag-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <!-- Additional dynamic floating scientific badges -->
+            <div class="orbit-chip orbit-chip--top float-anim-4">
+              <span class="chip-dot"></span> Generative AI
+            </div>
+            <div class="orbit-chip orbit-chip--bottom float-anim-5">
+              <span class="chip-sparkle">⚡</span> Multimodal SOTA
+            </div>
+
+            <div class="art-caption" aria-hidden="true">
+              <span>GENERATIVE &amp; LLMs</span>
+              <span class="caption-pulse">◉ SOTA BENCHMARK</span>
+              <span>VISION–LANGUAGE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container hero-foot"><span>Posts and Telecommunications Institute of Technology</span><a href="#research" aria-label="Explore research"><span aria-hidden="true">↓</span></a></div>
+    </section>
+      <section class="section research-section research-showcase" id="research">
+        <div class="container research-layout">
+          <!-- Left Column: Editorial & Manifesto -->
+          <div class="research-sidebar reveal">
+            <span class="section-eyebrow">01 / Research</span>
+            <h2 class="section-title">Research<br>Areas</h2>
+            <p class="research-subheading">From fundamental research to real-world impact.</p>
+            <p class="research-lead">
+              Research at NITS Lab focuses on modern AI models with capabilities for generation, language understanding, vision-language reasoning, and adaptation across different data domains. We are interested in algorithmic foundations, benchmark construction, and practical applications.
+            </p>
+            <div class="research-actions">
+              <a class="button-outline" href="public-en.html">Our publications <span aria-hidden="true">→</span></a>
+            </div>
+            <blockquote class="research-quote">
+              <p>“Exploring intelligence across modalities, domains, and real-world applications.”</p>
+              <cite>NITS LAB</cite>
+            </blockquote>
+          </div>
+
+          <!-- Right Column: 2x2 Connected Glass Matrix with Central Nucleus -->
+          <div class="research-matrix-wrapper reveal">
+            <!-- Central Futuristic Nucleus & Connector Beams -->
+            <div class="research-nexus" aria-hidden="true">
+              <div class="nexus-glow-pulse"></div>
+              <div class="nexus-core-orb">
+                <img src="assest/image/research/research-nucleus.jpg" alt="" class="nexus-core-img" />
+              </div>
+              <!-- Connector Pill Badges -->
+              <span class="nexus-badge badge-generate" data-target="research-generative">Generate</span>
+              <span class="nexus-badge badge-understand" data-target="research-language">Understand</span>
+              <span class="nexus-badge badge-reason" data-target="research-vision">Reason</span>
+              <span class="nexus-badge badge-generalize" data-target="research-domain">Generalize</span>
+            </div>
+
+            <!-- 2x2 Connected Glass Cards -->
+            <div class="research-matrix-grid">
+              <!-- Card 01: Generative & LLMs -->
+              <article class="matrix-card liquid-card interactive-card" id="research-generative" data-nexus="generate">
+                <div class="matrix-card-content">
+                  <div class="matrix-card-header">
+                    <span class="matrix-index">01</span>
+                    <div class="matrix-icon-box">
+                      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    </div>
+                  </div>
+                  <h3 class="matrix-title">Generative &amp; LLMs</h3>
+                  <p class="matrix-desc">Generative models for text, image, and multimodal data. Training, adaptation, and evaluation of large language models.</p>
+                  <a class="matrix-link" href="public-en.html">Learn more <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="matrix-visual visual-generative">
+                  <img src="assest/image/research/research-generative.jpg" alt="Generative &amp; LLMs 3D manifold" loading="lazy" />
+                </div>
+              </article>
+
+              <!-- Card 02: Multilingual Models -->
+              <article class="matrix-card liquid-card interactive-card" id="research-language" data-nexus="understand" tabindex="-1">
+                <div class="matrix-card-content">
+                  <div class="matrix-card-header">
+                    <span class="matrix-index">02</span>
+                    <div class="matrix-icon-box">
+                      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                  </div>
+                  <h3 class="matrix-title">Multilingual Models</h3>
+                  <p class="matrix-desc">Natural language processing for Vietnamese and low-resource languages. Benchmarks, datasets, and evaluation methods for multilingual capabilities.</p>
+                  <a class="matrix-link" href="public-en.html">Learn more <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="matrix-visual visual-multilingual">
+                  <img src="assest/image/research/research-multilingual.jpg" alt="Multilingual Models 3D globe" loading="lazy" />
+                </div>
+              </article>
+
+              <!-- Card 03: Vision-Language Reasoning -->
+              <article class="matrix-card liquid-card interactive-card" id="research-vision" data-nexus="reason" tabindex="-1">
+                <div class="matrix-card-content">
+                  <div class="matrix-card-header">
+                    <span class="matrix-index">03</span>
+                    <div class="matrix-icon-box">
+                      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </div>
+                  </div>
+                  <h3 class="matrix-title">Vision–Language Reasoning</h3>
+                  <p class="matrix-desc">Reasoning over images, videos, and multimodal questions. Large vision-language models for contextual understanding and background knowledge.</p>
+                  <a class="matrix-link" href="public-en.html">Learn more <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="matrix-visual visual-vision">
+                  <img src="assest/image/research/research-vision.jpg" alt="Vision-Language Reasoning 3D planes" loading="lazy" />
+                </div>
+              </article>
+
+              <!-- Card 04: Domain Generalization -->
+              <article class="matrix-card liquid-card interactive-card" id="research-domain" data-nexus="generalize">
+                <div class="matrix-card-content">
+                  <div class="matrix-card-header">
+                    <span class="matrix-index">04</span>
+                    <div class="matrix-icon-box">
+                      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="12" height="12" rx="1"/><rect x="9" y="9" width="12" height="12" rx="1"/></svg>
+                    </div>
+                  </div>
+                  <h3 class="matrix-title">Domain Generalization</h3>
+                  <p class="matrix-desc">Robust representation learning under domain shifts. Methods that help models generalize well in new environments.</p>
+                  <a class="matrix-link" href="public-en.html">Learn more <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="matrix-visual visual-domain">
+                  <img src="assest/image/research/research-domain.jpg" alt="Domain Generalization 3D terrain" loading="lazy" />
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom KPI & Milestone Strip (As seen in the reference mockup) -->
+        <div class="container research-kpi-container reveal">
+          <div class="research-kpi-bar">
+            <div class="kpi-block">
+              <span class="kpi-value">4</span>
+              <span class="kpi-label">Research Areas</span>
+            </div>
+            <div class="kpi-divider" aria-hidden="true"></div>
+            <div class="kpi-block">
+              <span class="kpi-value">10+</span>
+              <span class="kpi-label">Active Members</span>
+            </div>
+            <div class="kpi-divider" aria-hidden="true"></div>
+            <div class="kpi-block">
+              <span class="kpi-value">20+</span>
+              <span class="kpi-label">Publications</span>
+            </div>
+            <div class="kpi-divider" aria-hidden="true"></div>
+            <div class="kpi-block">
+              <span class="kpi-value">∞</span>
+              <span class="kpi-label">Real-world Impact</span>
+            </div>
+            <div class="kpi-scroll-cue">
+              <a href="#publications" aria-label="Scroll to publications">
+                <span>Scroll to explore</span>
+                <span class="kpi-arrow" aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section publications-section" id="publications" aria-labelledby="publications-heading">
+      <div class="container"><div class="section-header reveal"><span class="section-eyebrow">02 / Research in practice</span><h2 class="section-title" id="publications-heading">Selected publications</h2><a class="text-link" href="public-en.html">All publications <span aria-hidden="true">↗</span></a></div>
+      <div class="selected-publications">
+        <article class="publication-row reveal"><span class="publication-number">01</span><div>
+          <a class="publication-title" href="https://link.springer.com/content/pdf/10.1007/s44163-026-01411-z_reference.pdf">SADL: Sampling, Deliberation, and Pseudo-Labeling for In-Context Learning in Compositional Visual Question Answering</a>
+          <p class="publication-authors">Long Hoang Dang, Thao Minh Le, Vuong Le, Tu Minh Phuong, Truyen Tran</p>
+          <p class="publication-venue">Discover Artificial Intelligence, 2026.</p>
+          <div class="publication-links">
+            <a href="https://link.springer.com/content/pdf/10.1007/s44163-026-01411-z_reference.pdf">PDF <span aria-hidden="true">↗</span></a>
+          </div>
+        </div></article>
+        
+        <article class="publication-row reveal"><span class="publication-number">02</span><div>
+          <span class="publication-title">VIVID: A Culturally Grounded Benchmark Exposing the Figurative Language Gap in Vietnamese NLP</span>
+          <p class="publication-authors">Tu Tran Do, Nhat Ngoc Nguyen, Khanh-Tung Tran, Hoang D. Nguyen, Tu Minh Phuong, Long Hoang Dang</p>
+          <p class="publication-venue">International Conference on Language Resources and Evaluation, 2026.</p>
+        </div></article>
+        
+        <article class="publication-row reveal"><span class="publication-number">03</span><div>
+          <a class="publication-title" href="https://arxiv.org/pdf/2503.07631">OWLViz: An Open-World Benchmark for Visual Question Answering</a>
+          <p class="publication-authors">Thuy Nguyen, Dang Nguyen, Hoang Nguyen, Thuan Luong, Long Hoang Dang, Viet Dac Lai</p>
+          <p class="publication-venue">International Conference on Autonomous Agents and Multiagent Systems, 2025.</p>
+          <div class="publication-links">
+            <a href="https://arxiv.org/pdf/2503.07631">PDF <span aria-hidden="true">↗</span></a>
+          </div>
+        </div></article>
+      </div></div>
+    </section>
+      <section class="section leadership-section" id="director">
+        <div class="container">
+          <div class="director-profile reveal">
+            <div class="director-image">
+              <img src="assest/image/by7huxd0heu8wha6apih.jpg" alt="Dr. Dang Hoang Long, Head of NITS Lab" loading="lazy" width="1237" height="1280" />
+            </div>
+            <div class="director-info">
+              <p class="eyebrow">03 / Lab leadership</p><span class="director-role">Lab Head</span>
+              <h2>Dr. Dang Hoang Long</h2>
+              <div class="director-bio">
+                <p>
+                  Dr. Dang Hoang Long is Head of the Department of Computer Science at the Posts and Telecommunications Institute of Technology (PTIT) and leads NITS Lab. He graduated as valedictorian in Information Technology at PTIT in 2019. In 2020, he received the Deakin University Postgraduate Research Scholarship (DUPRS) and began his PhD at the Applied Artificial Intelligence Institute (A2I2), Deakin University, Australia. He completed his PhD in early 2024 and is currently teaching and working at PTIT.
+                </p>
+                <p>
+                  His research focuses on <strong>Vision and Language Reasoning</strong>, <strong>Large Language Models</strong>, <strong>Large Vision-Language Models</strong>, and generalization across data domains.
+                </p>
+              </div>
+              <div class="director-links">
+                <a href="mailto:longdh@ptit.edu.vn" aria-label="Email Dr. Long">
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                  Email
+                </a>
+                <a href="https://scholar.google.com/citations?user=unEG5bgAAAAJ&hl=vi" target="_blank" rel="noopener noreferrer">
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5.c3 3 9 3 12 0v-5"></path></svg>
+                  Google Scholar
+                </a>
+                <a href="https://github.com/NITS-Lab" target="_blank" rel="noopener noreferrer">
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.24c3-.34 6-1.53 6-6.6a5.4 5.4 0 0 0-1.5-3.8 5 5 0 0 0-.1-3.7s-1.2-.4-3.9 1.4a13.3 13.3 0 0 0-7 0c-2.7-1.8-3.9-1.4-3.9-1.4a5 5 0 0 0-.1 3.7 5.4 5.4 0 0 0-1.5 3.8c0 5.1 3 6.3 6 6.6a4.8 4.8 0 0 0-1 3.24v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <section class="section news-section" id="news">
+        <div class="container news-container">
+          <div class="section-header reveal">
+            <div class="header-left">
+              <span class="section-eyebrow">04 / Latest Updates</span>
+              <h2 class="section-title">News &amp; Milestones</h2>
+              <p class="news-subtitle">Recent academic achievements, international awards, and research milestones by NITS Lab members</p>
+            </div>
+            <div class="news-filters" role="tablist" aria-label="Filter news by category">
+              <button class="filter-chip active" type="button" data-filter="all" role="tab" aria-selected="true">All <span class="chip-count">7</span></button>
+              <button class="filter-chip" type="button" data-filter="fellowship" role="tab" aria-selected="false">Scholarships</button>
+              <button class="filter-chip" type="button" data-filter="award" role="tab" aria-selected="false">Awards</button>
+              <button class="filter-chip" type="button" data-filter="paper" role="tab" aria-selected="false">Research</button>
+              <button class="filter-chip" type="button" data-filter="exchange" role="tab" aria-selected="false">Exchange</button>
+            </div>
+          </div>
+
+          <div class="news-grid news-bento">
+            <!-- Featured Milestone Card: Cat Canh Fellow -->
+            <article class="news-card news-card--featured reveal" data-category="fellowship">
+              <div class="news-featured-media">
+                <img src="assest/image/news/news-catcanh.jpg" alt="Cat Canh Fellow Fellowship" class="news-media-img" loading="lazy" />
+                <span class="news-media-badge">NITS LAB AWARD</span>
+              </div>
+              <div class="news-card-body">
+                <div class="news-card-header">
+                  <span class="news-badge badge-fellowship">Scholarship</span>
+                  <time class="news-date" datetime="2026-06-16">Jun 16, 2026</time>
+                </div>
+                <div class="news-text-group">
+                  <h3 class="news-headline">Cat Canh Fellow Fellowship – US$3,000</h3>
+                  <p class="news-desc">Congratulations to student <strong>La Quang Hai</strong> for earning the <strong>Tier 3 - Cat Canh Fellow</strong> scholarship, with a total value of up to <strong>US$3,000</strong>.</p>
+                </div>
+                <div class="news-card-footer">
+                  <div class="news-tags">
+                    <span class="news-tag-pill">#Fellowship</span>
+                    <span class="news-tag-pill">#NITS_Resident</span>
+                    <span class="news-tag-pill">#CatCanhFellow</span>
+                  </div>
+                  <span class="news-circle-arrow" aria-hidden="true">→</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Huawei Global Final -->
+            <article class="news-card news-card--compact reveal" data-category="award">
+              <div class="news-card-media">
+                <img src="assest/image/news/news-huawei.jpg" alt="Huawei ICT Competition 2025-2026 Global Final" class="news-media-img" loading="lazy" />
+              </div>
+              <div class="news-card-body">
+                <div class="news-card-header">
+                  <span class="news-badge badge-award">Award</span>
+                  <time class="news-date" datetime="2026-06-06">Jun 6, 2026</time>
+                </div>
+                <p class="news-content"><strong>Nguyen Minh Toan</strong> won <strong>First Prize</strong> at the Huawei ICT Competition 2025-2026 <strong>Global Final</strong>.</p>
+                <div class="news-card-footer">
+                  <div class="news-tags">
+                    <span class="news-tag-pill">#GlobalFinal</span>
+                    <span class="news-tag-pill">#HuaweiICT</span>
+                  </div>
+                  <span class="news-circle-arrow" aria-hidden="true">→</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: Discover AI Q1 Journal -->
+            <article class="news-card news-card--compact reveal" data-category="paper">
+              <div class="news-card-media">
+                <img src="assest/image/news/news-discover-ai.jpg" alt="Discover Artificial Intelligence Springer Nature Q1" class="news-media-img" loading="lazy" />
+              </div>
+              <div class="news-card-body">
+                <div class="news-card-header">
+                  <span class="news-badge badge-paper">Research</span>
+                  <time class="news-date" datetime="2026-05-06">May 6, 2026</time>
+                </div>
+                <p class="news-content">Paper by <strong>Long Hoang Dang, Thao Minh Le, Vuong Le, Tu Minh Phuong, Truyen Tran</strong> accepted to <strong>Discover Artificial Intelligence (Q1)</strong>.</p>
+                <div class="news-card-footer">
+                  <div class="news-tags">
+                    <span class="news-tag-pill">#DiscoverAI</span>
+                    <span class="news-tag-pill">#Q1Journal</span>
+                  </div>
+                  <span class="news-circle-arrow" aria-hidden="true">→</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4: CVPR Workshop HiGen 2026 -->
+            <article class="news-card news-card--compact reveal" data-category="paper">
+              <div class="news-card-media">
+                <img src="assest/image/news/news-higen.jpg" alt="CVPR Workshop HiGen 2026" class="news-media-img" loading="lazy" />
+              </div>
+              <div class="news-card-body">
+                <div class="news-card-header">
+                  <span class="news-badge badge-conf">Conference</span>
+                  <time class="news-date" datetime="2026-05-06">May 6, 2026</time>
+                </div>
+                <p class="news-content">Research team had paper accepted to <strong>CVPR Workshop HiGen 2026</strong>.</p>
+                <div class="news-card-footer">
+                  <div class="news-tags">
+                    <span class="news-tag-pill">#CVPR2026</span>
+                    <span class="news-tag-pill">#HiGenWorkshop</span>
+                  </div>
+                  <span class="news-circle-arrow" aria-hidden="true">→</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 5: Quillora.AI -->
+            <article class="news-card news-card--compact reveal" data-category="award">
+              <div class="news-card-media">
+                <img src="assest/image/news/news-quillora.jpg" alt="AI and the Library of the Future Competition" class="news-media-img" loading="lazy" />
+              </div>
+              <div class="news-card-body">
+                <div class="news-card-header">
+                  <span class="news-badge badge-award">Award</span>
+                  <time class="news-date" datetime="2026-04-23">Apr 23, 2026</time>
+                </div>
+                <p class="news-content"><strong>Nguyen Thi Tu Anh</strong> and team <em>Quillora.AI</em> won <strong>First Prize</strong> in the "AI and the Library of the Future" competition.</p>
+                <div class="news-card-footer">
+                  <div class="news-tags">
+                    <span class="news-tag-pill">#QuilloraAI</span>
+                    <span class="news-tag-pill">#InnovationAward</span>
+                  </div>
+                  <span class="news-circle-arrow" aria-hidden="true">→</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 6: A2I2 Australia Exchange -->
+            <article class="news-card news-card--compact reveal" data-category="exchange">
+              <div class="news-card-media">
+                <img src="assest/image/news/news-a2i2.jpg" alt="Applied Artificial Intelligence Institute A2I2 Deakin University" class="news-media-img" loading="lazy" />
+              </div>
+              <div class="news-card-body">
+                <div class="news-card-header">
+                  <span class="news-badge badge-exchange">Exchange</span>
+                  <time class="news-date" datetime="2026-03-06">Mar 6, 2026</time>
+                </div>
+                <p class="news-content">Congratulations to students <strong>Nguyen Thanh An, Le Xuan Dung, La Quang Hai, and Nguyen Khac Gia Hoang</strong> for joining the research exchange at <strong>A2I2</strong>, Deakin University, Australia.</p>
+                <div class="news-card-footer">
+                  <div class="news-tags">
+                    <span class="news-tag-pill">#A2I2</span>
+                    <span class="news-tag-pill">#AustraliaExchange</span>
+                  </div>
+                  <span class="news-circle-arrow" aria-hidden="true">→</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 7: OLP-AI National -->
+            <article class="news-card news-card--compact reveal" data-category="award">
+              <div class="news-card-media">
+                <img src="assest/image/news/news-olp.jpg" alt="National Student Olympiad in AI OLP-AI 2025" class="news-media-img" loading="lazy" />
+              </div>
+              <div class="news-card-body">
+                <div class="news-card-header">
+                  <span class="news-badge badge-award">Award</span>
+                  <time class="news-date" datetime="2025-12-10">Dec 10, 2025</time>
+                </div>
+                <p class="news-content">Congratulations to <strong>Nguyen Minh Hieu</strong> for winning <strong>First Prize</strong> and <strong>Nguyen Khac Gia Hoang</strong> for winning <strong>Third Prize</strong> at National OLP-AI 2025.</p>
+                <div class="news-card-footer">
+                  <div class="news-tags">
+                    <span class="news-tag-pill">#OLPAI</span>
+                    <span class="news-tag-pill">#NationalChampions</span>
+                  </div>
+                  <span class="news-circle-arrow" aria-hidden="true">→</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section residency-section" aria-labelledby="residency-heading"><div class="container residency-layout">
+      <div class="residency-heading reveal"><p class="eyebrow">05 / NITS RESIDENT</p><h2 id="residency-heading">Where Talent Grows into Research Excellence</h2></div>
+      <div class="residency-copy liquid-card reveal"><p>NITS Research Residency connects talented students with research
+              mentors, industry partners, and academic groups to turn academic
+              potential into rigorous research outputs with a clear roadmap and
+              practical impact.</p><a class="button button-light" href="resident-en.html">Explore the programme <span aria-hidden="true">↗</span></a></div>
+    </div></section>
+    </main>
+    <footer class="site-footer"><div class="container"><div class="footer-main"><a class="footer-wordmark" href="#about">NITS LAB<span>Posts and Telecommunications Institute of Technology</span></a><div class="footer-contact"><span class="eyebrow">Get in touch</span><a href="mailto:longdh@ptit.edu.vn">longdh@ptit.edu.vn <span aria-hidden="true">↗</span></a></div></div><div class="footer-bottom"><p>&copy; 2026 NITS Lab &middot; Posts and Telecommunications Institute of Technology</p><a href="#about">Back to top <span aria-hidden="true">↑</span></a></div></div></footer>
+    <script src="assest/home.js" defer></script>
+    <script src="assest/glass.js" defer></script>
+    <script src="assest/lang-switcher.js" defer></script>
+  </body>
+</html>
