@@ -67,22 +67,22 @@
             <svg aria-hidden="true" class="orbital" viewBox="0 0 620 620" fill="none" focusable="false">
               <defs>
                 <pattern id="dot-grid" width="24" height="24" patternUnits="userSpaceOnUse">
-                  <circle cx="1" cy="1" r="1.2" fill="#176b5b" opacity=".18"/>
+                  <circle cx="1" cy="1" r="1.2" fill="#35B3DC" opacity=".14"/>
                 </pattern>
                 <radialGradient id="orbit-glow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#86e7c4" stop-opacity="0.45"/>
-                  <stop offset="45%" stop-color="#176b5b" stop-opacity="0.15"/>
-                  <stop offset="85%" stop-color="#f3faf6" stop-opacity="0"/>
+                  <stop offset="0%" stop-color="#35B3DC" stop-opacity="0.45"/>
+                  <stop offset="45%" stop-color="#35B3DC" stop-opacity="0.15"/>
+                  <stop offset="85%" stop-color="#F7FBFC" stop-opacity="0"/>
                 </radialGradient>
                 <radialGradient id="core-glow-grad" cx="50%" cy="50%" r="50%">
                   <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
-                  <stop offset="70%" stop-color="#eafaf3" stop-opacity="0.9"/>
-                  <stop offset="100%" stop-color="#86e7c4" stop-opacity="0.4"/>
+                  <stop offset="70%" stop-color="#EDF9F3" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#35B3DC" stop-opacity="0.4"/>
                 </radialGradient>
                 <linearGradient id="beam-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#176b5b" stop-opacity="0.2"/>
-                  <stop offset="50%" stop-color="#86e7c4" stop-opacity="0.9"/>
-                  <stop offset="100%" stop-color="#176b5b" stop-opacity="0.2"/>
+                  <stop offset="0%" stop-color="#35B3DC" stop-opacity="0.20"/>
+                  <stop offset="50%" stop-color="#35B3DC" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#35B3DC" stop-opacity="0"/>
                 </linearGradient>
                 <filter id="mint-bloom" x="-20%" y="-20%" width="140%" height="140%">
                   <feGaussianBlur stdDeviation="6" result="blur"/>
@@ -106,13 +106,13 @@
 
               <!-- Pulsing Sonar Radiance Waves -->
               <g class="sonar-waves">
-                <circle class="sonar-wave sonar-wave-1" cx="310" cy="310" r="80" stroke="#86e7c4" stroke-width="1.6" fill="none"/>
-                <circle class="sonar-wave sonar-wave-2" cx="310" cy="310" r="140" stroke="#86e7c4" stroke-width="1.3" fill="none"/>
-                <circle class="sonar-wave sonar-wave-3" cx="310" cy="310" r="200" stroke="#176b5b" stroke-width="1" fill="none"/>
+                <circle class="sonar-wave sonar-wave-1" cx="310" cy="310" r="80" stroke="#35B3DC" stroke-width="1.6" fill="none"/>
+                <circle class="sonar-wave sonar-wave-2" cx="310" cy="310" r="140" stroke="#35B3DC" stroke-width="1.3" fill="none"/>
+                <circle class="sonar-wave sonar-wave-3" cx="310" cy="310" r="200" stroke="#35B3DC" stroke-width="1" fill="none"/>
               </g>
 
               <!-- Technical Astrolabe Gauges -->
-              <g stroke="#176b5b" opacity=".22">
+              <g stroke="#102A38" opacity=".12">
                 <path d="M310 16V604M16 310H604"/>
                 <circle cx="310" cy="310" r="275" stroke-dasharray="2 10" stroke-width="1"/>
                 <circle cx="310" cy="310" r="225" stroke-dasharray="3 8" stroke-width="1"/>
@@ -121,22 +121,22 @@
 
               <!-- Outer Spinning Radar Scanner Ring (Clockwise) -->
               <g class="radar-scanner-ring">
-                <circle cx="310" cy="310" r="262" stroke="#86e7c4" stroke-width="2.2" stroke-dasharray="45 170 65 110" opacity=".65" filter="url(#mint-bloom)"/>
+                <circle cx="310" cy="310" r="262" stroke="#35B3DC" stroke-width="2.2" stroke-dasharray="45 170 65 110" opacity=".65" filter="url(#mint-bloom)"/>
               </g>
 
               <!-- Counter-Spinning Technical Tick Ring -->
               <g class="counter-spin-ring">
-                <circle cx="310" cy="310" r="242" stroke="#176b5b" stroke-width="1.2" stroke-dasharray="4 16" opacity=".5"/>
+                <circle cx="310" cy="310" r="242" stroke="#35B3DC" stroke-width="1.2" stroke-dasharray="4 16" opacity=".5"/>
               </g>
 
               <!-- Central Rotating Orbital System -->
               <g class="orbit-rotator">
-                <g class="orbit-lines" stroke="#176b5b" stroke-width="1.4">
+                <g class="orbit-lines" stroke="#44AA78" stroke-width="1.4">
                   <ellipse class="orbit-track track-1" cx="310" cy="310" rx="252" ry="110" transform="rotate(-35 310 310)"/>
                   <ellipse class="orbit-track track-2" cx="310" cy="310" rx="252" ry="110" transform="rotate(35 310 310)"/>
                   <ellipse class="orbit-track track-3" cx="310" cy="310" rx="252" ry="110" transform="rotate(90 310 310)"/>
-                  <ellipse class="orbit-track track-4" cx="310" cy="310" rx="228" ry="142" transform="rotate(-40 310 310)" stroke="#86e7c4" opacity=".35" stroke-dasharray="8 6"/>
-                  <ellipse class="orbit-track track-5" cx="310" cy="310" rx="228" ry="142" transform="rotate(40 310 310)" stroke="#86e7c4" opacity=".35" stroke-dasharray="8 6"/>
+                  <ellipse class="orbit-track track-4" cx="310" cy="310" rx="228" ry="142" transform="rotate(-40 310 310)" stroke="#35B3DC" opacity=".35" stroke-dasharray="8 6"/>
+                  <ellipse class="orbit-track track-5" cx="310" cy="310" rx="228" ry="142" transform="rotate(40 310 310)" stroke="#35B3DC" opacity=".35" stroke-dasharray="8 6"/>
                 </g>
 
                 <!-- Synaptic energy beams connecting nodes -->
@@ -151,42 +151,42 @@
                 <!-- Orbiting Quantum Nodes with Intense Mint Glow & Radar Waves -->
                 <g class="orbit-nodes">
                   <g class="node-group node-1" transform="translate(119, 452)">
-                    <circle r="14" fill="#86e7c4" opacity=".25" class="node-pulse"/>
-                    <circle r="8" fill="#86e7c4" filter="url(#intense-glow)"/>
+                    <circle r="14" fill="#35B3DC" opacity=".25" class="node-pulse"/>
+                    <circle r="8" fill="#35B3DC" filter="url(#intense-glow)"/>
                     <circle r="4" fill="#ffffff"/>
                   </g>
                   <g class="node-group node-2" transform="translate(465, 443)">
-                    <circle r="12" fill="#86e7c4" opacity=".25" class="node-pulse"/>
-                    <circle r="7" fill="#86e7c4" filter="url(#intense-glow)"/>
+                    <circle r="12" fill="#35B3DC" opacity=".25" class="node-pulse"/>
+                    <circle r="7" fill="#35B3DC" filter="url(#intense-glow)"/>
                     <circle r="3.5" fill="#ffffff"/>
                   </g>
                   <g class="node-group node-3" transform="translate(310, 63)">
-                    <circle r="15" fill="#86e7c4" opacity=".25" class="node-pulse"/>
-                    <circle r="8.5" fill="#86e7c4" filter="url(#intense-glow)"/>
+                    <circle r="15" fill="#35B3DC" opacity=".25" class="node-pulse"/>
+                    <circle r="8.5" fill="#35B3DC" filter="url(#intense-glow)"/>
                     <circle r="4" fill="#ffffff"/>
                   </g>
                   <g class="node-group node-4" transform="translate(520, 220)">
-                    <circle r="10" fill="#176b5b" opacity=".3"/>
-                    <circle r="6" fill="#176b5b"/>
-                    <circle r="2.5" fill="#86e7c4"/>
+                    <circle r="10" fill="#44AA78" opacity=".3"/>
+                    <circle r="6" fill="#44AA78"/>
+                    <circle r="2.5" fill="#35B3DC"/>
                   </g>
                   <g class="node-group node-5" transform="translate(95, 171)">
-                    <circle r="10" fill="#176b5b" opacity=".3"/>
-                    <circle r="5.5" fill="#176b5b"/>
-                    <circle r="2" fill="#86e7c4"/>
+                    <circle r="10" fill="#44AA78" opacity=".3"/>
+                    <circle r="5.5" fill="#44AA78"/>
+                    <circle r="2" fill="#35B3DC"/>
                   </g>
                   <g class="node-group node-6" transform="translate(310, 557)">
-                    <circle r="11" fill="#86e7c4" opacity=".2"/>
-                    <circle r="5.5" fill="#86e7c4"/>
+                    <circle r="11" fill="#35B3DC" opacity=".2"/>
+                    <circle r="5.5" fill="#35B3DC"/>
                     <circle r="2" fill="#ffffff"/>
                   </g>
                 </g>
 
                 <!-- Center Core Multi-layered Sphere -->
                 <g class="center-core-sphere">
-                  <circle cx="310" cy="310" r="70" stroke="#86e7c4" stroke-width="1.6" stroke-dasharray="6 8" opacity=".65" class="core-outer-ring"/>
-                  <circle cx="310" cy="310" r="58" fill="url(#core-glow-grad)" stroke="#176b5b" stroke-width="2" stroke-opacity=".5" filter="url(#mint-bloom)"/>
-                  <circle cx="310" cy="310" r="46" fill="none" stroke="#86e7c4" stroke-width="1.2" stroke-dasharray="4 4" opacity=".75"/>
+                  <circle cx="310" cy="310" r="70" stroke="#35B3DC" stroke-width="1.6" stroke-dasharray="6 8" opacity=".65" class="core-outer-ring"/>
+                  <circle cx="310" cy="310" r="58" fill="url(#core-glow-grad)" stroke="#44AA78" stroke-width="2" stroke-opacity=".5" filter="url(#mint-bloom)"/>
+                  <circle cx="310" cy="310" r="46" fill="none" stroke="#35B3DC" stroke-width="1.2" stroke-dasharray="4 4" opacity=".75"/>
                 </g>
               </g>
             </svg>
@@ -255,10 +255,6 @@
                 <img src="assest/image/research/research-nucleus.jpg" alt="" class="nexus-core-img" />
               </div>
               <!-- Connector Pill Badges -->
-              <span class="nexus-badge badge-generate" data-target="research-generative">Generate</span>
-              <span class="nexus-badge badge-understand" data-target="research-language">Understand</span>
-              <span class="nexus-badge badge-reason" data-target="research-vision">Reason</span>
-              <span class="nexus-badge badge-generalize" data-target="research-domain">Generalize</span>
             </div>
 
             <!-- 2x2 Connected Glass Cards -->

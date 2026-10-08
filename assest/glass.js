@@ -154,8 +154,8 @@
 
       badge.addEventListener('pointerenter', () => {
         if (matchingCard) {
-          matchingCard.style.borderColor = 'var(--mint-400)';
-          matchingCard.style.boxShadow = '0 24px 56px -12px rgba(9, 42, 38, 0.2), 0 0 24px rgba(134, 231, 196, 0.4)';
+          matchingCard.style.borderColor = 'rgba(68, 170, 120, 0.45)';
+          matchingCard.style.boxShadow = '0 24px 56px -12px rgba(16, 42, 56, 0.2), 0 0 24px rgba(134, 215, 177, 0.4)';
         }
         if (nexusOrb) nexusOrb.style.transform = 'scale(1.12)';
       });
