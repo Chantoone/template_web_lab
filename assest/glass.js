@@ -1,6 +1,7 @@
 (() => {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const pointer = matchMedia('(hover: hover) and (pointer: fine)');
+  const mouseEffectsEnabled = !document.body.classList.contains('home');
   const desktop = matchMedia('(min-width: 1001px)');
   const nav = document.querySelector('#main-nav');
   
@@ -31,7 +32,7 @@
   const spotlight = document.getElementById('cursor-spotlight');
   let cursorDot = document.getElementById('cursor-dot');
   
-  if (!cursorDot && pointer.matches) {
+  if (mouseEffectsEnabled && !cursorDot && pointer.matches) {
     cursorDot = document.createElement('div');
     cursorDot.id = 'cursor-dot';
     cursorDot.className = 'cursor-dot';
@@ -39,7 +40,7 @@
     document.body.prepend(cursorDot);
   }
 
-  if (pointer.matches && !reduced.matches) {
+  if (mouseEffectsEnabled && pointer.matches && !reduced.matches) {
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
     let currentX = mouseX;
@@ -103,6 +104,7 @@
   // Interactive Card-Level Mouse Spotlight & 3D Tilt Physics
   const targetCards = document.querySelectorAll('.bento-card, .matrix-card, .publication-row, .news-card, .news-lead-spread, .dispatch-card, .director-profile, .residency-copy');
   targetCards.forEach(card => {
+    if (!mouseEffectsEnabled) return;
     card.classList.add('interactive-card');
     
     card.addEventListener('pointermove', event => {
@@ -221,7 +223,7 @@
         frame = 0;
         if (!lastPointer) return;
         if (drag) setRotation(drag.angle + (lastPointer.x - drag.x) / drag.width * 240);
-        if (!reduced.matches && pointer.matches && lastPointer.type !== 'touch') {
+        if (mouseEffectsEnabled && !reduced.matches && pointer.matches && lastPointer.type !== 'touch') {
           const box = diagram.getBoundingClientRect();
           const x = (lastPointer.x - box.left) / box.width - .5;
           const y = (lastPointer.y - box.top) / box.height - .5;
@@ -274,7 +276,7 @@
     });
 
     const heroLayout = document.querySelector('.hero-layout');
-    if (heroLayout) {
+    if (heroLayout && mouseEffectsEnabled) {
       heroLayout.addEventListener('pointermove', event => {
         if (reduced.matches || !pointer.matches || event.pointerType === 'touch' || art.classList.contains('is-dragging')) return;
         const rect = art.getBoundingClientRect();

@@ -97,3 +97,51 @@
   });
   if (art) artObserver.observe(art);
 })();
+
+(() => {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const labels = {
+    query: 'Receiving user query',
+    scan: 'Analyzing visual features',
+    result: 'Reasoning complete'
+  };
+  const steps = ['query', 'scan', 'result'];
+
+  document.querySelectorAll('[data-vision-demo]').forEach(demo => {
+    const wrap = demo.closest('.vision-demo-wrap');
+    const status = demo.querySelector('[data-demo-status]');
+    let index = 0;
+    let timer;
+
+    function render(step) {
+      index = steps.indexOf(step);
+      demo.dataset.step = step;
+      wrap.classList.toggle('result-visible', step === 'result');
+      if (status) status.textContent = labels[step];
+    }
+
+    function schedule(delay = 1400) {
+      clearTimeout(timer);
+      if (reducedMotion.matches || document.hidden) return;
+      timer = setTimeout(() => {
+        render(steps[(index + 1) % steps.length]);
+        schedule(index === 2 ? 2800 : 1500);
+      }, delay);
+    }
+
+    function syncMotionPreference() {
+      if (reducedMotion.matches) render('result');
+      else {
+        render('query');
+        schedule();
+      }
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) clearTimeout(timer);
+      else schedule(500);
+    });
+    reducedMotion.addEventListener('change', syncMotionPreference);
+    syncMotionPreference();
+  });
+})();

@@ -3,26 +3,26 @@
    Forest Green + Mint visual identity. Noticeably larger typography. */
 :root {
   /* Primary colors */
-  --forest-950: #051a17;
-  --forest-900: #102A38;
+  --forest-950: #0B202B;
+  --forest-900: #102B3A;
   --forest-800: #123A43;
   --forest-700: #287C58;
-  --emerald-600: #44AA78;
+  --emerald-600: #49AE79;
   --emerald-700: #287C58;
-  --emerald-500: #168FB8;
-  --mint-400: #86D7B1;
+  --emerald-500: #0F769F;
+  --mint-400: #BFE5D2;
   --mint-300: #A9E4C8;
   --mint-200: #CDEEDD;
-  --mint-100: #EDF9F3;
+  --mint-100: #E9F6F1;
 
   /* Neutral colors */
-  --soft-mint-white: #F7FBFC; /* Primary background */
+  --soft-mint-white: #F3FAFC; /* Primary background */
   --white: #ffffff;
-  --dark-slate: #334D5C;      /* Body text */
-  --muted-green-gray: #6B7F8A;/* Supporting text & metadata */
-  --mint-border: rgba(134, 215, 177, 0.35);
-  --mint-border-strong: rgba(134, 215, 177, 0.65);
-  --line-mint: #d1e6de;
+  --dark-slate: #3D5968;      /* Body text */
+  --muted-green-gray: #5E7480;/* Supporting text & metadata */
+  --mint-border: #DEEAEF;
+  --mint-border-strong: #BFE5D2;
+  --line-mint: #DEEAEF;
 
   /* Semantic mappings */
   --color-background: var(--soft-mint-white);
