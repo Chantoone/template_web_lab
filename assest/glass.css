@@ -13,6 +13,17 @@
   --brand-ice: #F3FAFC;
   --brand-mint-white: #E9F6F1;
 
+  /* Premium Academic Tech section rhythm */
+  --section-bg-hero: #F3FAFC;
+  --section-bg-research: #FFFFFF;
+  --section-bg-publications: #F3FAFC;
+  --section-bg-leadership: #FFFFFF;
+  --section-bg-news: #EFF8F5;
+  --section-bg-residency: #F3FAFC;
+  --section-bg-footer: #E6F3EE;
+  --section-card-border: #DEEAEF;
+  --section-card-shadow: 0 12px 30px -22px rgba(16, 43, 58, 0.26);
+
   /* Semantic tokens */
   --color-background: #F3FAFC;
   --color-surface: #FFFFFF;
@@ -2681,6 +2692,31 @@ html { scroll-padding-top: 130px; }
 .residency-nav a:hover { color: var(--brand-green); }
 
 /* Footer */
+.site-footer--watermark {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.site-footer--watermark::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: url("image/footer.png") center center / auto 100% no-repeat;
+  opacity: 0.32;
+  filter: saturate(0.95) contrast(1.12);
+  pointer-events: none;
+}
+.site-footer--watermark::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.18) 50%, rgba(255, 255, 255, 0.72));
+  pointer-events: none;
+}
+.site-footer--watermark > .container { position: relative; z-index: 1; }
+
 .site-footer--image { background: var(--brand-navy); border-top-color: rgba(53, 179, 220, 0.24); color: #fff; }
 .site-footer--image .footer-main,
 .site-footer--image .footer-bottom { background: linear-gradient(135deg, var(--brand-navy), var(--brand-navy-soft)); color: rgba(255, 255, 255, 0.72); }
@@ -2694,6 +2730,16 @@ html { scroll-padding-top: 130px; }
   .nav.indicator-ready a.active {
     color: var(--brand-navy);
     background: rgba(21, 155, 211, 0.10);
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer--watermark::before {
+    background-position: center center;
+    opacity: 0.26;
+  }
+  .site-footer--watermark::after {
+    background: rgba(255, 255, 255, 0.42);
   }
 }
 
@@ -2769,4 +2815,78 @@ html { scroll-padding-top: 130px; }
   color: var(--brand-cyan-strong);
   background: #EAF7FC;
   border-color: #CBE7F1;
+}
+
+/* ==========================================================================
+   Homepage section rhythm — Premium Academic Tech
+   Scoped to the bilingual homepage so standalone publications/resident pages
+   retain their own visual systems.
+   ========================================================================== */
+.home.glass-site { background: var(--section-bg-hero); }
+
+.home .hero {
+  background: var(--section-bg-hero);
+}
+
+.home .research-section.research-showcase {
+  background: var(--section-bg-research);
+  border-block: 0;
+}
+
+.home .publications-section,
+.home.glass-site .publications-section {
+  background: var(--section-bg-publications);
+  border-block: 0;
+}
+
+.home .leadership-section {
+  background: var(--section-bg-leadership);
+  border-block: 0;
+}
+
+.home .news-editorial-section {
+  background: var(--section-bg-news);
+  border-block: 0;
+}
+
+.home .residency-section {
+  background: var(--section-bg-residency);
+  border-block: 0;
+}
+
+.home .residency-section::after { display: none; }
+
+.home .site-footer--watermark {
+  background: var(--section-bg-footer);
+  border-top: 0;
+}
+
+.home .site-footer--watermark::after {
+  background: linear-gradient(
+    90deg,
+    rgba(230, 243, 238, 0.74),
+    rgba(230, 243, 238, 0.2) 50%,
+    rgba(230, 243, 238, 0.74)
+  );
+}
+
+/* White cards stay distinct on both tinted and white section surfaces. */
+.home .matrix-card,
+.home.glass-site .publication-row,
+.home .news-lead-spread,
+.home .dispatch-card {
+  background: var(--color-surface);
+  border-color: var(--section-card-border);
+  box-shadow: var(--section-card-shadow);
+}
+
+.home .director-image {
+  border-color: var(--section-card-border);
+  box-shadow: var(--section-card-shadow);
+}
+
+@media (max-width: 600px) {
+  .home .site-footer--watermark::after {
+    background: rgba(230, 243, 238, 0.48);
+  }
 }
