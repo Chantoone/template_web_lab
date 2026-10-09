@@ -2,8 +2,59 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const pointer = matchMedia('(hover: hover) and (pointer: fine)');
   const desktop = matchMedia('(min-width: 1001px)');
+
+  // ==========================================================================
+  // 1. Global Theme Switcher (Dark / Light Mode) with LocalStorage & System Sync
+  // ==========================================================================
+  const THEME_KEY = 'nits-theme';
+  const themeToggle = document.getElementById('theme-toggle');
+
+  function getPreferredTheme() {
+    try {
+      const saved = localStorage.getItem(THEME_KEY);
+      if (saved === 'dark' || saved === 'light') return saved;
+    } catch (e) {}
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      localStorage.setItem(THEME_KEY, theme);
+    } catch (e) {}
+    if (themeToggle) {
+      const isEn = document.documentElement.lang?.toLowerCase().startsWith('en');
+      const label = theme === 'dark' 
+        ? (isEn ? 'Switch to light mode' : 'Chuyển sang chế độ sáng')
+        : (isEn ? 'Switch to dark mode' : 'Chuyển sang chế độ tối');
+      themeToggle.setAttribute('aria-label', label);
+      themeToggle.setAttribute('title', label);
+    }
+  }
+
+  const initialTheme = getPreferredTheme();
+  applyTheme(initialTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+    });
+  }
+
+  try {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (!localStorage.getItem(THEME_KEY)) {
+        applyTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+  } catch (err) {}
+
+  // ==========================================================================
+  // 2. Navigation Active Indicator Pill
+  // ==========================================================================
   const nav = document.querySelector('#main-nav');
-  
   if (nav) {
     const indicator = document.createElement('span');
     indicator.className = 'nav-indicator';
@@ -27,10 +78,12 @@
     updateIndicator();
   }
 
-  // Global Dynamic Cursor Spotlight & Interactive Following Animation
+  // ==========================================================================
+  // 3. Dynamic Cursor Spotlight & Interactive Following Dot
+  // ==========================================================================
   const spotlight = document.getElementById('cursor-spotlight');
   let cursorDot = document.getElementById('cursor-dot');
-  
+
   if (!cursorDot && pointer.matches) {
     cursorDot = document.createElement('div');
     cursorDot.id = 'cursor-dot';
@@ -69,7 +122,7 @@
       if (cursorDot) cursorDot.style.opacity = '0';
     });
 
-    // Smooth physics loop for ambient spotlight
+    // Smooth lerp physics for spotlight glow
     function animateSpotlight() {
       if (isMoving && spotlight) {
         currentX += (mouseX - currentX) * 0.12;
@@ -80,8 +133,8 @@
     }
     requestAnimationFrame(animateSpotlight);
 
-    // Hover detection for dynamic cursor expansion
-    const interactiveTargets = 'a, button, .bento-card, .matrix-card, .nexus-badge, .kpi-block, .publication-row, .news-card, .news-lead-spread, .dispatch-card, .chronicle-item, .orbit-tag, .orbit-chip, .director-profile, .news-circle-arrow, .editorial-arrow-btn, .lead-action-link';
+    // Interactive element hover detection
+    const interactiveTargets = 'a, button, .bento-card, .matrix-card, .nexus-badge, .kpi-block, .publication-row, .news-lead-spread, .dispatch-card, .chronicle-item, .orbit-tag, .orbit-chip, .director-profile, .mentor-card, .tl-item, .year-nav a';
     document.querySelectorAll(interactiveTargets).forEach(el => {
       el.addEventListener('pointerenter', () => {
         isHovering = true;
@@ -100,25 +153,27 @@
     });
   }
 
-  // Interactive Card-Level Mouse Spotlight & 3D Tilt Physics
-  const targetCards = document.querySelectorAll('.bento-card, .matrix-card, .publication-row, .news-card, .news-lead-spread, .dispatch-card, .director-profile, .residency-copy');
+  // ==========================================================================
+  // 4. Interactive Card-Level Mouse Spotlight & 3D Tilt Physics
+  // ==========================================================================
+  const targetCards = document.querySelectorAll('.bento-card, .matrix-card, .publication-row, .news-lead-spread, .dispatch-card, .director-profile, .residency-copy, .public-site .publication-list li, .resident-site .card, .mentor-card');
   targetCards.forEach(card => {
     card.classList.add('interactive-card');
-    
+
     card.addEventListener('pointermove', event => {
       if (reduced.matches || !pointer.matches || event.pointerType === 'touch') return;
       const rect = card.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
-      
+
       card.style.setProperty('--mouse-x', `${x}px`);
       card.style.setProperty('--mouse-y', `${y}px`);
 
-      // High-precision smooth 3D tilt
+      // 3D Tilt
       const normX = (x / rect.width - 0.5);
       const normY = (y / rect.height - 0.5);
-      const maxTilt = (card.classList.contains('bento-card') || card.classList.contains('matrix-card')) ? 6 : 4;
-      card.style.transform = `perspective(1000px) translateY(-6px) rotateX(${-normY * maxTilt}deg) rotateY(${normX * maxTilt}deg)`;
+      const maxTilt = (card.classList.contains('bento-card') || card.classList.contains('matrix-card')) ? 5 : 3;
+      card.style.transform = `perspective(1000px) translateY(-5px) rotateX(${-normY * maxTilt}deg) rotateY(${normX * maxTilt}deg)`;
     }, { passive: true });
 
     card.addEventListener('pointerleave', () => {
@@ -128,7 +183,9 @@
     });
   });
 
-  // Research Matrix & Central Nexus Resonance
+  // ==========================================================================
+  // 5. Research Matrix & Central Nexus Resonance
+  // ==========================================================================
   const nexusBadges = document.querySelectorAll('.nexus-badge');
   const matrixCards = document.querySelectorAll('.matrix-card');
   const nexusOrb = document.querySelector('.nexus-core-orb');
@@ -137,7 +194,7 @@
     matrixCards.forEach(card => {
       const targetId = card.id;
       const matchingBadge = document.querySelector(`.nexus-badge[data-target="${targetId}"]`);
-      
+
       card.addEventListener('pointerenter', () => {
         if (matchingBadge) matchingBadge.classList.add('is-active');
         if (nexusOrb) nexusOrb.style.transform = 'scale(1.1) rotate(6deg)';
@@ -154,8 +211,8 @@
 
       badge.addEventListener('pointerenter', () => {
         if (matchingCard) {
-          matchingCard.style.borderColor = 'var(--mint-400)';
-          matchingCard.style.boxShadow = '0 24px 56px -12px rgba(9, 42, 38, 0.2), 0 0 24px rgba(134, 231, 196, 0.4)';
+          matchingCard.style.borderColor = 'var(--nits-cyan-400)';
+          matchingCard.style.boxShadow = '0 24px 56px -12px rgba(37, 99, 235, 0.25), 0 0 24px rgba(6, 182, 212, 0.4)';
         }
         if (nexusOrb) nexusOrb.style.transform = 'scale(1.12)';
       });
@@ -174,12 +231,13 @@
       });
     });
   }
-  // Hero Orbital Interactive System
+
+  // ==========================================================================
+  // 6. Hero Orbital Interactive System
+  // ==========================================================================
   const art = document.querySelector('.interactive-orbit');
   if (art) {
     const diagram = art.querySelector('.orbital');
-    const controls = document.querySelector('.orbit-controls');
-    const en = document.documentElement.lang === 'en';
     let angle = 0;
     let drag = null;
     let frame = 0;
@@ -188,24 +246,8 @@
     function setRotation(value) {
       angle = Math.max(-180, Math.min(180, Math.round(value)));
       art.style.setProperty('--orbit-angle', `${angle}deg`);
-      if (controls) {
-        const slider = controls.querySelector('input');
-        const output = controls.querySelector('output');
-        if (slider) {
-          slider.value = String(angle);
-          slider.setAttribute('aria-valuetext', `${angle} ${en ? 'degrees' : 'độ'}`);
-        }
-        if (output) output.value = `${angle}°`;
-      }
     }
 
-    if (controls) {
-      controls.hidden = false;
-      const slider = controls.querySelector('input');
-      if (slider) slider.addEventListener('input', () => setRotation(Number(slider.value)));
-      const resetBtn = controls.querySelector('button');
-      if (resetBtn) resetBtn.addEventListener('click', () => setRotation(0));
-    }
     art.classList.add('orbit-ready');
     setRotation(0);
 
@@ -253,10 +295,6 @@
       });
     }
 
-    reduced.addEventListener('change', () => {
-      if (diagram) diagram.style.removeProperty('transform');
-    });
-
     art.querySelectorAll('[data-orbit-focus]').forEach(link => {
       const highlight = () => { art.dataset.focus = link.dataset.orbitFocus; };
       const clear = () => { delete art.dataset.focus; };
@@ -264,13 +302,6 @@
       link.addEventListener('pointerleave', clear);
       link.addEventListener('focus', highlight);
       link.addEventListener('blur', clear);
-      link.addEventListener('click', () => {
-        const target = document.getElementById(link.hash.slice(1));
-        if (target) {
-          target.classList.remove('is-pending');
-          target.focus({ preventScroll: true });
-        }
-      });
     });
 
     const heroLayout = document.querySelector('.hero-layout');
@@ -281,7 +312,7 @@
         const x = (event.clientX - rect.left) / rect.width - 0.5;
         const y = (event.clientY - rect.top) / rect.height - 0.5;
         if (Math.abs(x) < 1.2 && Math.abs(y) < 1.2) {
-          art.style.transform = `perspective(1000px) rotateX(${-y * 10}deg) rotateY(${x * 10}deg) translateY(-4px)`;
+          art.style.transform = `perspective(1000px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg) translateY(-4px)`;
         }
       });
       heroLayout.addEventListener('pointerleave', () => {
@@ -290,7 +321,9 @@
     }
   }
 
-  // Scroll Spy for Residency navigation
+  // ==========================================================================
+  // 7. Scroll Spy for Residency Subnav
+  // ==========================================================================
   const localLinks = [...document.querySelectorAll('.residency-nav a')];
   if (localLinks.length && 'IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
@@ -310,7 +343,9 @@
     });
   }
 
-  // Editorial News & Milestones Scroll Trigger (Heading Glow & Underline Draw)
+  // ==========================================================================
+  // 8. News Editorial Headline Observer (Draw Line & Glow)
+  // ==========================================================================
   const newsEditorial = document.querySelector('.news-editorial-section');
   if (newsEditorial && 'IntersectionObserver' in window) {
     const newsHeader = newsEditorial.querySelector('.news-editorial-header');
