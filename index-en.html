@@ -6,6 +6,16 @@
     <title>NITS Lab | PTIT</title>
     <link rel="icon" type="image/png" href="assest/image/logo.png" />
     <meta name="description" content="Introduction website for NITS Lab at Posts and Telecommunications Institute of Technology." />
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem('nits-theme');
+          const theme = savedTheme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        } catch (_) {}
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -38,6 +48,11 @@
           <span></span>
         </button>
 
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Turn on dark mode" title="Turn on dark mode">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15.2A9 9 0 0 1 8.8 3a9 9 0 1 0 12.2 12.2Z" /></svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" /></svg>
+        </button>
+
         <button class="lang-toggle" type="button" data-lang-switcher data-vi-href="index.html" data-en-href="index-en.html" aria-label="Switch to Vietnamese" title="Switch to Vietnamese">
           <span aria-hidden="true">◎</span>
           <span>EN</span>
@@ -60,7 +75,7 @@
           <section class="vision-demo-wrap hero-entry" aria-label="Vision-language reasoning illustration">
             <div class="vision-demo-glow" aria-hidden="true"></div>
             <div class="vision-demo" data-vision-demo data-step="query" aria-live="polite">
-              <img class="vision-scene" src="test_img/Unknown-8.png" width="1448" height="1086" alt="A car and a pedestrian on a city street at night" fetchpriority="high" />
+              <img class="vision-scene" src="test_img/Unknown-8.png" data-light-src="test_img/Unknown-8.png" data-dark-src="test_img/Unknown-9.png" width="1448" height="1086" alt="A car and a pedestrian on a city street at night" fetchpriority="high" />
               <div class="vision-shade" aria-hidden="true"></div>
               <div class="vision-grid" aria-hidden="true"></div>
               <div class="vision-hud-top"><span>Vision-language reasoning</span><span class="vision-record">REC</span></div>

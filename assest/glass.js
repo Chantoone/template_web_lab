@@ -1,4 +1,40 @@
 (() => {
+  const themeToggle = document.querySelector('#theme-toggle');
+  const themeImages = document.querySelectorAll('[data-light-src][data-dark-src]');
+
+  function updateThemeImages(theme) {
+    themeImages.forEach(image => {
+      const nextSource = theme === 'dark' ? image.dataset.darkSrc : image.dataset.lightSrc;
+      if (nextSource && image.getAttribute('src') !== nextSource) image.setAttribute('src', nextSource);
+    });
+  }
+
+  updateThemeImages(document.documentElement.dataset.theme || 'light');
+
+  if (themeToggle) {
+    const isVietnamese = document.documentElement.lang === 'vi';
+
+    function updateThemeToggle(theme) {
+      const isDark = theme === 'dark';
+      const label = isVietnamese
+        ? (isDark ? 'Bật chế độ sáng' : 'Bật chế độ tối')
+        : (isDark ? 'Turn on light mode' : 'Turn on dark mode');
+      themeToggle.setAttribute('aria-label', label);
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+      themeToggle.title = label;
+    }
+
+    updateThemeToggle(document.documentElement.dataset.theme || 'light');
+    themeToggle.addEventListener('click', () => {
+      const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+      try { localStorage.setItem('nits-theme', theme); } catch (_) {}
+      updateThemeToggle(theme);
+      updateThemeImages(theme);
+    });
+  }
+
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const pointer = matchMedia('(hover: hover) and (pointer: fine)');
   const mouseEffectsEnabled = !document.body.classList.contains('home');
