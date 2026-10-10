@@ -3043,6 +3043,42 @@ html[data-theme="dark"] .residency-heading h2 { color: #fff; }
 html[data-theme="dark"] .residency-copy p { color: #e2e8f0; }
 html[data-theme="dark"] .home .site-footer--watermark::after { background: linear-gradient(90deg, rgba(6, 10, 18, 0.82), rgba(6, 10, 18, 0.28) 50%, rgba(6, 10, 18, 0.82)); }
 
+/* Requested header, research KPI and matrix accent colors */
+.brand-text .full {
+  display: inline-block;
+  color: #10B981;
+  background: linear-gradient(90deg, #10B981 0%, #06B6D4 50%, #2563EB 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.research-section .kpi-value {
+  color: #10B981;
+  background: linear-gradient(135deg, #10B981 0%, #06B6D4 50%, #2563EB 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.research-section .kpi-label { color: #64748B; }
+html[data-theme="dark"] .research-section .kpi-label { color: #94A3B8; }
+
+.research-section .kpi-scroll-cue a,
+.research-section .kpi-scroll-cue a:hover { color: #3B82F6; }
+
+.research-section .matrix-index,
+.research-section .matrix-icon-box,
+.research-section .matrix-card:hover .matrix-icon-box {
+  color: #10B981;
+}
+
+.research-section .matrix-icon-box,
+.research-section .matrix-card:hover .matrix-icon-box {
+  background: var(--brand-mint-white);
+  border-color: #CEE9DC;
+}
+
 @media (max-width: 1000px) {
   .theme-toggle { order: 2; }
   .lang-toggle { order: 3; }
